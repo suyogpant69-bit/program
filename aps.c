@@ -1,49 +1,51 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
-{   
- int choice;
-char repeat;
+{
+    int a, b;
+    int choice;
+    char cont;
 
-    printf(" ********************************\n");
-    printf("Welcome to deerwalk canteen\n");
-    printf("********************************\n");
 do{
-    printf("*** menu for today\n");
-    printf("--------------------------------\n");
+    printf("Choose operation:\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
 
-    printf(" momo\n");
-    printf(" chowmein\n");
-    printf(" fried rice\n");
-    printf(" burger\n");
-    printf(" pizza\n");
-    printf("enter your choice\n");
-    scanf("%d",&choice);
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
     switch(choice)
     {
         case 1:
-            printf("you have ordered momo\n");
+            printf("Addition = %d\n", a + b);
             break;
+
         case 2:
-            printf("you have ordered chowmein\n");
+            printf("Subtraction = %d\n", a - b);
             break;
+
         case 3:
-            printf("you have ordered fried rice\n");
+            printf("Multiplication = %d\n", a * b);
             break;
+
         case 4:
-            printf("you have ordered burger\n");
+            if(b != 0)
+                printf("Division = %.2f\n", (float)a / b);
+            else
+                printf("Error! Division by zero.");
             break;
-        case 5:
-            printf("you have ordered pizza\n");
-            break;
+
         default:
-            printf("invalid choice\n");
+            printf("Invalid choice!");
     }
 
-    printf("do you want to order again? (y for yes/ n for no)\n");
-    scanf(" %c",&repeat);
-}while(repeat == 'y' || repeat == 'Y');
-    {
-        printf("THANK YOU FOR VISITING DEERWALK CANTEEN\n");
-    }
+    printf("DO YOU WANT TO CONTINUE? (y/n): ");
+    scanf(" %c",&cont);}
+
+    while(cont=='y'|| cont =='Y');
     return 0;
 }
